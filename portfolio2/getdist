@@ -1,0 +1,4 @@
+#!/bin/bash
+#Return one measurement from the sensor
+
+python getdist.py
