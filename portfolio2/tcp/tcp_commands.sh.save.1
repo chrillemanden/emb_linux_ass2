@@ -1,0 +1,30 @@
+#!/bin/bash
+
+#while getopts "s" option; do
+#
+#	case "${option}" in
+#		s)
+#			str_cmd=$OPTARG
+#			;	esac
+d#one
+
+
+#if [ -t 1 ]; then
+#     	read c
+#elif [ "x$s" != "x" ]; then
+#     	read c
+#else
+ #    	c=$1
+#	if [ "$#" = 0 ]; then
+#		echo "Pass an argument." > /dev/stderr
+#		exit 1
+#	fi
+
+#read c
+c=$1
+
+if [ "x$str_cmd" = getdist ];then
+	tail -n1 distances
+fi
+
+exit 0

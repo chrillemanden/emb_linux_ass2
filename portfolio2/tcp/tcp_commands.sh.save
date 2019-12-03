@@ -1,11 +1,11 @@
-
 #!/bin/bash
+
+#read c
 
 while getopts "s" option; do
 
 	case "${option}" in
 		s)
-			#str_cmd=$OPTARG
 			s=1
 			;;
 		*)
@@ -13,26 +13,23 @@ while getopts "s" option; do
 	esac
 done
 
-
 if [ -t 1 ]; then
-     	read c
+	read c
 elif [ "x$s" != "x" ]; then
-     	read c
+	read c
 else
-    	c=$1
-	if [ "$#" = 0 ]; then
-		echo "Pass an argument." > /dev/stderr
+	c=$1
+	if [ "$## = 0 ]; then
+		echo "Pass in an argument." > /dev/stderr
 		exit 1
 	fi
 fi
 
-#read c
-#c=$1
 
-echo "hay"
 
-if [ $c = getdist ]; then
-	echo "distance: "
+
+if [ $1 = getdist ]
+then
 	tail -n1 distances
 fi
 
