@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 while getopts "s" option; do
@@ -12,7 +11,7 @@ while getopts "s" option; do
 			;;
 	esac
 done
-
+shift $((OPTIND-1))
 
 if [ -t 1 ]; then
      	read c
@@ -29,11 +28,20 @@ fi
 #read c
 #c=$1
 
-echo "hay"
+#echo "hay"
 
 if [ $c = getdist ]; then
 	echo "distance: "
 	tail -n1 distances
 fi
+if [ $c = start ]; then
+	echo "initiate wallfollower"
+	$(python3 /home/pi/git/emb_linux_ass2/portfolio2/wallfollow.py 1)
+fi
 
+if [ $c = stop ]; then
+	echo "stop"
+	$(python3 /home/pi/git/emb_linux_ass2/portfolio2/wallfollow.py 0)
+	killall python3
+fi
 exit 0

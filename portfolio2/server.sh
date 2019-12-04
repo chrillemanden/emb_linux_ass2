@@ -4,7 +4,7 @@
 
 sudo pigpiod
  
-socat tcp-listen:8080,reuseaddr,fork exec:'bash tcp/tcp_commands.sh && echo done' &
+socat tcp-listen:8080,reuseaddr,fork exec:'bash tcp/tcp_commands.sh -s && echo done' &
 
 rm ./distances
 touch ./distances
